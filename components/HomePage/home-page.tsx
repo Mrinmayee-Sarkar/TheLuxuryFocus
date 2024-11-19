@@ -22,7 +22,7 @@ export default function MainHomePage() {
       setCurrentIndex((prevIndex) => 
         prevIndex === components.length - 1 ? 0 : prevIndex + 1
       );
-    }, 10000);
+    }, 3000);
 
     return () => clearInterval(timer);
   }, []);

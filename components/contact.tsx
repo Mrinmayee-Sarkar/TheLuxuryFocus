@@ -37,7 +37,7 @@ export default function ContactPage() {
       </div>
 
       {/* Right Section - Content */}
-      <div className=" md:p-12 flex flex-col justify-center bg-white">
+      <div className=" md:p-12 flex flex-col justify-center ">
         <div className="max-w-2xl mx-auto">
           <div className="mb-8 ">
             <h1 className={`${tangerine.className} md:text-6xl lg:text-8xl text-[#af8c53] `}>
