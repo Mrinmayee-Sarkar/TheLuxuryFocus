@@ -29,7 +29,7 @@ const josefin = Josefin_Sans({
 export default function HomePage() {
   return (
     <div className="relative w-full min-h-screen overflow-hidden">
-      {/* Image container that takes full width */}
+    
       <div className="absolute inset-0 w-full h-full">
         <Image
           src="/Images/Image.jpg"
@@ -39,11 +39,10 @@ export default function HomePage() {
           sizes="100vw"
           priority
         />
-        {/* Dark overlay */}
+      
         <div className="absolute inset-0 bg-black/30" />
       </div>
 
-      {/* Content centered over the image */}
       <div className="relative z-10 flex flex-col items-center justify-center min-h-screen text-center px-4 py-8">
         <h1 
           className={`${tangerine.className} sm:text-7xl md:text-8xl lg:text-[190px] text-[#d1966a] mt-[145px]
@@ -69,8 +68,8 @@ export default function HomePage() {
 
         <div className="items-center space-y-3 sm:space-y-4 md:space-y-5">
           <div className="h-[1px] sm:h-[3px] sm:w-64 md:w-80 lg:w-96 bg-[#cbc2b5]" />
-          <span
-            className={`${cinzel.className} text-[#f6e5d9] text-lg sm:text-xl md:text-2xl lg:text-[22px] leading-tight tracking-widest font-[500] block`}
+          <span  onClick={() => document.getElementById('about-us')?.scrollIntoView({ behavior: 'smooth' })}
+            className={`${cinzel.className} text-[#f6e5d9] text-lg sm:text-xl md:text-2xl lg:text-[22px] leading-tight tracking-widest font-[500] block cursor-pointer`}
           >
             VIEW MORE
           </span>

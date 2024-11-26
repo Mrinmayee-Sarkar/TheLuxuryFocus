@@ -24,7 +24,7 @@ const josefin= Josefin_Sans({
   
 export default function ContactPage() {
   return (
-    <div className="grid lg:grid-cols-2 min-h-screen">
+    <div className="grid lg:grid-cols-2 min-h-screen pt-24 bg-white" id='contact-us'>
       {/* Left Section - Image */}
       <div className="relative hidden lg:block">
         <Image

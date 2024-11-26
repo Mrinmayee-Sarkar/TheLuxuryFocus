@@ -12,7 +12,7 @@ const tangerine = Tangerine({
 
 const josefin = Josefin_Sans({
   subsets: ["latin"],
-  weight: ['400'],
+  weight: ["400"],
   display: "swap",
 });
 
@@ -21,12 +21,13 @@ export default function MainAbout() {
   const isInView = useInView(ref, { once: true, amount: 0.3 });
 
   return (
-    <motion.div 
+    <motion.div
       ref={ref}
       initial={{ opacity: 0 }}
       animate={isInView ? { opacity: 1 } : { opacity: 0 }}
       transition={{ duration: 1 }}
-      className="bg-[#f5f5ef] pt-16 pb-1 overflow-hidden"
+      className="bg-[#f5f5ef] pt-16 pb-1 overflow-hidden "
+      id='about-us'
     >
       <motion.h1
         initial={{ y: -50, opacity: 0 }}
@@ -36,7 +37,7 @@ export default function MainAbout() {
       >
         Discover us
       </motion.h1>
-      <motion.p 
+      <motion.p
         initial={{ y: 50, opacity: 0 }}
         animate={isInView ? { y: 0, opacity: 1 } : { y: 50, opacity: 0 }}
         transition={{ duration: 0.8, delay: 0.4 }}
@@ -48,11 +49,11 @@ export default function MainAbout() {
         connections between luxury brands and clients who demand excellence.
       </motion.p>
 
-      <motion.div 
+      <motion.div
         initial={{ scale: 0.9, opacity: 0 }}
         animate={isInView ? { scale: 1, opacity: 1 } : { scale: 0.9, opacity: 0 }}
         transition={{ duration: 0.8, delay: 0.6 }}
-        className="relative h-[500px] mt-10"
+        className="relative h-[500px] mt-10 overflow-hidden"
       >
         <Image
           src="/Images/Image5.jpg"
@@ -67,18 +68,18 @@ export default function MainAbout() {
 
         <div className="absolute inset-0 z-30 flex gap-8 px-16">
           <div className="w-2/3 flex justify-center text-white">
-            <motion.h2 
-              initial={{ x: -100, opacity: 0 }}
-              animate={isInView ? { x: 0, opacity: 1 } : { x: -100, opacity: 0 }}
+            <motion.h2
+              initial={{ x: "-100%", opacity: 0 }}
+              animate={isInView ? { x: 0, opacity: 1 } : { x: "-100%", opacity: 0 }}
               transition={{ duration: 0.8, delay: 0.8 }}
-              className={`${tangerine.className} text-[#af8c53] text-[100px] mt-20`}
+              className={`${tangerine.className} text-[#af8c53] text-[160px] mt-24 ml-[10px]`}
             >
               Truth 
               <motion.p 
                 initial={{ y: 20, opacity: 0 }}
                 animate={isInView ? { y: 0, opacity: 1 } : { y: 20, opacity: 0 }}
                 transition={{ duration: 0.8, delay: 1 }}
-                className={`${josefin.className} text-[25px] text-white`}
+                className={`${josefin.className} text-[25px] text-white -mt-14 ml-[100px]`}
               >
                 ABOUT US
               </motion.p>
@@ -88,9 +89,9 @@ export default function MainAbout() {
               initial={{ x: 100, opacity: 0 }}
               animate={isInView ? { x: 0, opacity: 1 } : { x: 100, opacity: 0 }}
               transition={{ duration: 0.8, delay: 1.2 }}
-              className={`${josefin.className} text-[16px] text-center text-[#f6e5d9] leading-relaxed w-[390px] ml-[350px] my-24`}
+              className={`${josefin.className} text-[21px] text-center text-[#f6e5d9] leading-relaxed w-[650px] ml-[100px] my-[150px]`}
             >
-              Founded by Ramil Pandya, with over 20 years of experience in luxury sales and marketing, 
+              Founded by Mr. Ramil Pandya, with over 20 years of experience in luxury sales and marketing, 
               TheLuxuryFocus.com was created to connect the entire luxury industry. Through our paid membership 
               platform and exclusive networks, we provide a streamlined platform for brands to advertise and 
               connect with high-net-worth individuals. We also offer a WhatsApp business group for a trusted 
@@ -141,7 +142,7 @@ export default function MainAbout() {
                   muted
                   loop
                 >
-                  <source src="/Images/Perfume.mp4" type="video/mp4" />
+                  <source src="/Images/BizConnectVideo.mp4" type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
                 

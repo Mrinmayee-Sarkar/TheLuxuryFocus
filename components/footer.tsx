@@ -23,7 +23,7 @@ const Footer = () => {
   return (
     <div className="relative pt-1">
       {/* Background Image */}
-      <div className="relative h-[400px]">
+      <div className="relative h-[450px]">
         <Image
           src="/Images/Image6.jpg"
           alt="Luxury Footer Background"
@@ -71,17 +71,20 @@ const Footer = () => {
                 </h2>
                 <div className="h-[2px] bg-[#cbc2b5] w-[340px] mb-3"></div>
                 <p
-                  className={`${josefin.className} text-[#cccccc] text-[18px] leading-relaxed w-[360px]`}
+                  className={`${josefin.className} text-[#cccccc] pl-5 text-[18px] leading-relaxed w-[360px]`}
                 >
                   Coimbatore, Tamil Nadu, India
                 </p>
-                <div className="w-full h-[200px] relative rounded-lg overflow-hidden">
-                  {/* <Image
-                    // src="/Images/map.png"
-                    alt="Location Map"
-                    fill
-                    className="object-cover"
-                  /> */}
+                <div className="w-full h-[200px] pt-3 pl-5 relative rounded-lg overflow-hidden">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.346018624243!2d76.95583209999999!3d11.0168445!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba859af2f971cb5%3A0x2fc1c81e183ed282!2sCoimbatore%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1698496054294!5m2!1sen!2sin"
+                    width="80%"
+                    height="200"
+                    style={{ border: 0 }}
+                    
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                  ></iframe>
                 </div>
               </div>
 

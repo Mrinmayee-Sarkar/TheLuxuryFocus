@@ -31,6 +31,35 @@
 
 
 
+@layer components {
+  .nav-link.active {
+    @apply relative;
+  }
+
+  .nav-link.active::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-full h-0.5 bg-current transform scale-x-0 transition-transform duration-300;
+  }
+
+  .nav-link.active:hover::after {
+    @apply scale-x-100;
+  }
+
+  @keyframes glow {
+    0%, 100% {
+      text-shadow: 0 0 7px currentColor, 0 0 10px currentColor, 0 0 21px currentColor;
+    }
+    50% {
+      text-shadow: 0 0 10px currentColor, 0 0 20px currentColor, 0 0 30px currentColor;
+    }
+  }
+
+  .nav-link.active {
+    animation: glow 2s ease-in-out infinite;
+  }
+}
+
+
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;

@@ -28,7 +28,7 @@ export default function MainHomePage() {
   }, []);
 
   return (
-    <div className="relative w-full h-screen">
+    <div id="home" className="relative w-full h-screen bg-gray-900">
       {components.map((component, index) => (
         <div
           key={index}

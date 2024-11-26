@@ -70,7 +70,8 @@ export default function HomePage() {
         <div className="items-center space-y-3 sm:space-y-4 md:space-y-5">
           <div className="h-[1px] sm:h-[3px] sm:w-64 md:w-80 lg:w-96 bg-[#cbc2b5]" />
           <span
-            className={`${cinzel.className} text-[#f6e5d9] text-lg sm:text-xl md:text-2xl lg:text-[22px] leading-tight tracking-widest font-[500] block`}
+           onClick={() => document.getElementById('about-us')?.scrollIntoView({ behavior: 'smooth' })}
+            className={`${cinzel.className} text-[#f6e5d9] text-lg sm:text-xl md:text-2xl lg:text-[22px] leading-tight tracking-widest font-[500] block cursor-pointer `}
           >
             VIEW MORE
           </span>
