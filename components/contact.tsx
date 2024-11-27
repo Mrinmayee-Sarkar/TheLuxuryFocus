@@ -8,6 +8,7 @@ import { Tangerine } from "next/font/google";
 import { Josefin_Sans } from "next/font/google";
 import { Cinzel } from "next/font/google";
 const tangerine  = Tangerine({
+  subsets:['latin'],
   weight:['400']
 })
 

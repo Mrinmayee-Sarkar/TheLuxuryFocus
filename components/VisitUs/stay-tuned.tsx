@@ -10,6 +10,7 @@ const josefin= Josefin_Sans({
   })
 
   const tangerine  = Tangerine({
+    subsets:['latin'],
     weight:['400']
   })
 
