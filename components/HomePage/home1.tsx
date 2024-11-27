@@ -46,7 +46,7 @@ export default function HomePage() {
       {/* Content centered over the image */}
       <div className="relative z-10 flex flex-col items-center justify-center min-h-screen text-center px-4 py-8">
         <h1 
-          className={`${tangerine.className} sm:text-7xl md:text-8xl lg:text-[190px] text-[#d1966a] mt-[145px]
+          className={`${tangerine.className} text-6xl xs:text-7xl sm:text-8xl md:text-9xl  lg:text-[190px] text-[#d1966a] mt-[60px] sm:mt-[100px] md:mt-[145px]
             [text-shadow:_0_0_30px_#d1966a,_0_0_60px_#d1966a,_0_0_90px_rgba(209,150,106,0.8)]
             animate-pulse-subtle
           `}

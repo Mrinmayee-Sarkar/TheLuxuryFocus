@@ -61,11 +61,8 @@ export default function TestimonialsPage() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.3 });
   const [currentTestimonialIndex, setCurrentTestimonialIndex] = useState(0);
-
-  // State for partners carousel
   const [currentPartnerIndex, setCurrentPartnerIndex] = useState(0);
 
-  // Handlers for testimonials navigation
   const handleTestimonialNext = () => {
     setCurrentTestimonialIndex((prev) =>
       (prev + 1) % testimonials.length
@@ -78,7 +75,6 @@ export default function TestimonialsPage() {
     );
   };
 
-  // Handlers for partners navigation
   const handlePartnerNext = () => {
     setCurrentPartnerIndex((prev) =>
       (prev + 1) % partners.length
@@ -98,15 +94,15 @@ export default function TestimonialsPage() {
         initial={{ opacity: 0 }}
         animate={isInView ? { opacity: 1 } : { opacity: 0 }}
         transition={{ duration: 1 }}
-        className="pt-24 pb-1 overflow-hidden"
+        className="pt-16 md:pt-24 pb-1 overflow-hidden"
         id='testimonials'
       >
-        <div className="flex justify-center">
+        <div className="flex flex-col md:flex-row justify-center items-center md:items-end px-4 md:px-0">
           <motion.h1
             initial={{ y: -50, opacity: 0 }}
             animate={isInView ? { y: 0, opacity: 1 } : { y: -50, opacity: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className={`text-[#c26d2d] ${tangerine.className} -mt-8 text-center text-[80px]`}
+            className={`text-[#c26d2d] ${tangerine.className} text-center text-[60px] md:text-[80px]`}
           >
             Our Clients
           </motion.h1>
@@ -115,18 +111,17 @@ export default function TestimonialsPage() {
             initial={{ y: 50, opacity: 0 }}
             animate={isInView ? { y: 0, opacity: 1 } : { y: 50, opacity: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className={`text-[#13100e] ${josefin.className} text-[20px] ml-5 mt-6`}
+            className={`text-[#13100e] ${josefin.className} text-[16px] md:text-[20px] mt-2 md:mt-0 md:ml-5 text-center md:text-left`}
           >
             Here's what some of our satisfied clients have shared:
           </motion.h2>
         </div>
 
-        {/* Background image with overlay */}
         <motion.div
           initial={{ scale: 0.9, opacity: 0 }}
           animate={isInView ? { scale: 1, opacity: 1 } : { scale: 0.9, opacity: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="relative h-[550px]"
+          className="relative h-[700px] md:h-[550px] mt-8 md:mt-0"
         >
           <Image
             src="/Images/Image8.jpg"
@@ -137,9 +132,8 @@ export default function TestimonialsPage() {
             priority
           />
 
-          {/* Testimonials Section */}
-          <div className="absolute top-10 left-0 right-0 mx-auto px-10 z-30">
-            <div className="flex overflow-hidden bg-[#cbc2b5] relative ">
+          <div className="absolute inset-0 flex flex-col justify-between py-8 md:py-10 px-4 md:px-10 z-30">
+            <div className="flex overflow-hidden bg-[#cbc2b5] relative">
               <ChevronLeft
                 className="w-6 h-6 text-gray-800 absolute left-2 top-1/2 transform -translate-y-1/2 cursor-pointer"
                 onClick={handleTestimonialPrev}
@@ -148,20 +142,20 @@ export default function TestimonialsPage() {
                 const index = (currentTestimonialIndex + offset) % testimonials.length;
                 const testimonial = testimonials[index];
                 return (
-                  <div key={index} className="w-full h-40">
-                    <div className="rounded-lg flex items-center text-[14px] mx-4 my-4">
+                  <div key={index} className="w-full h-auto md:h-40 p-4">
+                    <div className="rounded-lg flex flex-col md:flex-row items-center text-[12px] md:text-[14px]">
                       <Image
                         src={testimonial.image}
                         alt={testimonial.author}
-                        width={80}
-                        height={80}
-                        className="rounded-full"
+                        width={60}
+                        height={60}
+                        className="rounded-full mb-2 md:mb-0 md:mr-4"
                       />
-                      <p className={`text-center ${hanken.className} text-gray-800 ml-4`}>
+                      <p className={`text-center md:text-left ${hanken.className} text-gray-800`}>
                         {testimonial.text}
                       </p>
                     </div>
-                    <p className="italic text-sm text-gray-500 text-center ml-16">- {testimonial.author}</p>
+                    <p className="italic text-sm text-gray-500 text-center md:text-left mt-2">- {testimonial.author}</p>
                   </div>
                 );
               })}
@@ -171,19 +165,20 @@ export default function TestimonialsPage() {
               />
             </div>
 
-            <div className="bg-[#f5f5ef] my-5 flex justify-center">
-              <h2 className={`text-center text-[80px] ${tangerine.className} text-[#c26d2d]`}>
-                Our Partners
-              </h2>
-              <p className={`text-center ${josefin.className} text-[20px] mt-[60px] ml-3`}>
-                We are proud to have them with us
-              </p>
+            <div className="bg-[#f5f5ef] mt-8 md:mt-5 p-4 md:p-0">
+              <div className="flex flex-col md:flex-row justify-center items-center">
+                <h2 className={`text-center text-[50px] md:text-[80px] ${tangerine.className} text-[#c26d2d]`}>
+                  Our Partners
+                </h2>
+                <p className={`text-center ${josefin.className} text-[16px] md:text-[20px] mt-2 md:mt-[60px] md:ml-3`}>
+                  We are proud to have them with us
+                </p>
+              </div>
             </div>
 
-            {/* Partners Section */}
-            <div className="flex items-center justify-center space-x-8 overflow-hidden bg-[#cbc2b5] h-40 ">
+            <div className="flex items-center justify-center space-x-4 md:space-x-8 overflow-hidden bg-[#cbc2b5] h-32 md:h-40 mt-4 md:mt-0">
               <ChevronLeft
-                className="w-10 h-10 text-gray-800 transform -translate-y-1/2 cursor-pointer"
+                className="w-8 h-8 md:w-10 md:h-10 text-gray-800 transform -translate-y-1/2 cursor-pointer"
                 onClick={handlePartnerPrev}
               />
               {[0, 1, 2, 3, 4, 5].map((offset) => {
@@ -193,19 +188,20 @@ export default function TestimonialsPage() {
                   <motion.div
                     key={index}
                     whileHover={{ scale: 1.1 }}
-                    className="w-[100px] h-[100px] flex justify-center bg-white shadow-md"
+                    className="w-[60px] h-[60px] md:w-[100px] md:h-[100px] flex justify-center items-center bg-white shadow-md"
                   >
                     <Image
                       src={logo}
                       alt={`Partner ${index + 1}`}
-                      width={150}
-                      height={150}
+                      width={50}
+                      height={50}
+                      className="w-auto h-auto max-w-full max-h-full"
                     />
                   </motion.div>
                 );
               })}
               <ChevronRight
-                className="w-10 h-10 text-gray-800 transform -translate-y-1/2 cursor-pointer"
+                className="w-8 h-8 md:w-10 md:h-10 text-gray-800 transform -translate-y-1/2 cursor-pointer"
                 onClick={handlePartnerNext}
               />
             </div>

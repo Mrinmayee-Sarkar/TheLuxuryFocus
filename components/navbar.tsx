@@ -1,7 +1,9 @@
 "use client";
-import React from "react";
+
+import React, { useState, useEffect } from "react";
 import { Cinzel } from "next/font/google";
 import Image from "next/image";
+import { Menu, X } from 'lucide-react';
 
 const cinzel = Cinzel({
   subsets: ["latin"],
@@ -9,7 +11,8 @@ const cinzel = Cinzel({
 });
 
 export default function Navbar() {
-  const [activeSection, setActiveSection] = React.useState("HOME");
+  const [activeSection, setActiveSection] = useState("HOME");
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(
@@ -18,10 +21,11 @@ export default function Navbar() {
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
       setActiveSection(sectionId);
+      setIsMenuOpen(false);
     }
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     const handleScroll = () => {
       const sections = [
         "HOME",
@@ -30,7 +34,7 @@ export default function Navbar() {
         "TESTIMONIALS",
         "CONTACT US",
       ];
-      const scrollPosition = window.scrollY + 100; // Adding offset for better detection
+      const scrollPosition = window.scrollY + 100;
 
       for (const section of sections) {
         const element = document.getElementById(
@@ -93,12 +97,25 @@ export default function Navbar() {
       <div className="container py-2">
         <div className="flex justify-between items-center">
           <Image
-            width={300}
-            height={300}
+            width={150}
+            height={150}
             alt="logo"
             src="/Images/logo.png"
-          ></Image>
-          <ul className="flex space-x-28 text-[16px]">
+            className="w-auto h-auto"
+          />
+          <div className="md:hidden">
+            <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="text-white focus:outline-none"
+            >
+              {isMenuOpen ? (
+                <X className="h-6 w-6" />
+              ) : (
+                <Menu className="h-6 w-6" />
+              )}
+            </button>
+          </div>
+          <ul className="hidden md:flex space-x-8 lg:space-x-28 text-[16px]">
             {["HOME", "ABOUT US", "PACKAGES", "TESTIMONIALS", "CONTACT US"].map(
               (item) => (
                 <li key={item}>
@@ -115,7 +132,28 @@ export default function Navbar() {
             )}
           </ul>
         </div>
+        {isMenuOpen && (
+          <div className="md:hidden mt-4">
+            <ul className="flex flex-col space-y-4 text-[16px]">
+              {["HOME", "ABOUT US", "PACKAGES", "TESTIMONIALS", "CONTACT US"].map(
+                (item) => (
+                  <li key={item}>
+                    <span
+                      onClick={() => scrollToSection(item)}
+                      className={`nav-link ${
+                        activeSection === item ? "active" : "inactive"
+                      }`}
+                    >
+                      {item}
+                    </span>
+                  </li>
+                )
+              )}
+            </ul>
+          </div>
+        )}
       </div>
     </nav>
   );
 }
+

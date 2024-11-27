@@ -24,7 +24,7 @@ const josefin= Josefin_Sans({
   
 export default function ContactPage() {
   return (
-    <div className="grid lg:grid-cols-2 min-h-screen pt-24 bg-white" id='contact-us'>
+    <div className="grid lg:grid-cols-2 min-h-screen max-sm:pt-2 pt-24 bg-white" id='contact-us'>
       {/* Left Section - Image */}
       <div className="relative hidden lg:block">
         <Image
@@ -40,7 +40,7 @@ export default function ContactPage() {
       <div className=" md:p-12 flex flex-col justify-center ">
         <div className="max-w-2xl mx-auto">
           <div className="mb-8 ">
-            <h1 className={`${tangerine.className} md:text-6xl lg:text-8xl text-[#af8c53] `}>
+            <h1 className={`${tangerine.className} max-sm:text-[100px] md:text-6xl lg:text-8xl text-[#af8c53] `}>
               {"Let's Talk"}
             </h1>
             <h2 className={`${josefin.className} text-[25px] md:text-2xl tracking-[0.2em] text-[#13100e]`}>
@@ -88,22 +88,22 @@ export default function ContactPage() {
         
               <div className="flex items-center  border border-[#af8c53] rounded-[25px] bg-[#af8c53] w-[350px] h-[46px] justify-center md:justify-start">
                 <div className={`${cinzel.className} font-semibold ml-2 text-[15px]`}>GET SOCIAL</div>
-                <Link href="#" className=" text-white p-2 rounded-full hover:bg-[#9A815A] transition-colors">
+                <Link href="https://www.instagram.com/raamilpandya" className=" text-white p-2 rounded-full hover:bg-[#9A815A] transition-colors">
                   <FaInstagram className="w-5 h-5 ml-3" />
                 </Link>
-                <Link href="#" className=" text-white p-2 rounded-full hover:bg-[#9A815A] transition-colors">
+                <Link href="https://api.whatsapp.com/send?phone=133266" className=" text-white p-2 rounded-full hover:bg-[#9A815A] transition-colors">
                   <FaWhatsapp className="w-5 h-5" />
                 </Link>
-                <Link href="#" className=" text-white p-2 rounded-full hover:bg-[#9A815A] transition-colors">
+                <Link href="https://www.facebook.com/raamil?mibextid=ZbWKwL" className=" text-white p-2 rounded-full hover:bg-[#9A815A] transition-colors">
                   <FaFacebook className="w-5 h-5" />
                 </Link>
-                <Link href="#" className=" text-white p-2 rounded-full hover:bg-[#9A815A] transition-colors">
+                <Link href="https://www.youtube.com/@ramilramu" className=" text-white p-2 rounded-full hover:bg-[#9A815A] transition-colors">
                   <FaYoutube className="w-5 h-5" />
                 </Link>
-                <Link href="#" className=" text-white p-2 rounded-full hover:bg-[#9A815A] transition-colors">
+                <Link href="linkedin.com/in/ramil-pandya-5b429824" className=" text-white p-2 rounded-full hover:bg-[#9A815A] transition-colors">
                   <FaLinkedin className="w-5 h-5" />
                 </Link>
-                <Link href="#" className=" text-white p-2 rounded-full hover:bg-[#9A815A] transition-colors">
+                <Link href="https://x.com/ramilramu?t=PmIjuhIyj0M1dN-RG8hgYw&s=09" className=" text-white p-2 rounded-full hover:bg-[#9A815A] transition-colors">
                   <FaXTwitter className="w-5 h-5" />
                 </Link>
               </div>

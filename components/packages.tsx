@@ -5,7 +5,6 @@ import Image from "next/image"
 import { Tangerine, Josefin_Sans, Hanken_Grotesk } from "next/font/google"
 import { motion, useInView } from "framer-motion"
 
-
 const tangerine = Tangerine({
   weight: ["400"],
   subsets: ["latin"],
@@ -32,14 +31,14 @@ export default function WhyUsAbout() {
       initial={{ opacity: 0 }}
       animate={isInView ? { opacity: 1 } : { opacity: 0 }}
       transition={{ duration: 1 }}
-      className="pt-24 pb-1"
+      className="pt-16 md:pt-24 pb-1"
       id='packages'
     >
       <motion.h2
         initial={{ y: 50, opacity: 0 }}
         animate={isInView ? { y: 0, opacity: 1 } : { y: 50, opacity: 0 }}
         transition={{ duration: 0.8, delay: 0.4 }}
-        className={`flex justify-center pl-72 text-[#13100e] ${josefin.className} text-[25px]`}
+        className={`flex justify-center text-center px-4 md:pl-72 text-[#13100e] ${josefin.className} text-[18px] md:text-[25px]`}
       >
         PRICING AND PACKAGES
       </motion.h2>
@@ -48,7 +47,7 @@ export default function WhyUsAbout() {
         initial={{ y: -50, opacity: 0 }}
         animate={isInView ? { y: 0, opacity: 1 } : { y: -50, opacity: 0 }}
         transition={{ duration: 0.8, delay: 0.2 }}
-        className={`flex justify-center -mt-16 text-[#c26d2d] ${tangerine.className} text-[100px]`}
+        className={`flex justify-center -mt-8 md:-mt-16 text-[#c26d2d] ${tangerine.className} text-[60px] md:text-[100px]`}
       >
         Special
       </motion.h1>
@@ -57,7 +56,7 @@ export default function WhyUsAbout() {
         initial={{ scale: 0.9, opacity: 0 }}
         animate={isInView ? { scale: 1, opacity: 1 } : { scale: 0.9, opacity: 0 }}
         transition={{ duration: 0.8, delay: 0.6 }}
-        className="relative h-[570px]"
+        className="relative h-[1200px] md:h-[570px]"
       >
         <Image
           src="/Images/Image9.jpg"
@@ -68,19 +67,19 @@ export default function WhyUsAbout() {
           priority
         />
         
-        <div className="absolute inset-0 flex justify-center items-center space-x-3 -mt-10">
+        <div className="absolute inset-0 flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-3 py-8 md:py-0 md:-mt-10">
           <motion.div
             initial={{ x: -100, opacity: 0 }}
             animate={isInView ? { x: 0, opacity: 1 } : { x: -100, opacity: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
-            className="relative w-[397px] h-[557px] overflow-hidden"
+            className="relative w-[300px] h-[420px] md:w-[397px] md:h-[557px] overflow-hidden"
           >
             <Image
               src="/Images/Silver.png"
               alt="Silver Package 1"
               fill
               className="object-cover rounded-lg shadow-lg"
-              sizes="500px"
+              sizes="(max-width: 768px) 300px, 500px"
             />
           </motion.div>
           
@@ -88,29 +87,29 @@ export default function WhyUsAbout() {
             initial={{ x: 100, opacity: 0 }}
             animate={isInView ? { x: 0, opacity: 1 } : { x: 100, opacity: 0 }}
             transition={{ duration: 0.8, delay: 1 }}
-            className="relative w-[397px] h-[557px] overflow-hidden"
+            className="relative w-[300px] h-[420px] md:w-[397px] md:h-[557px] overflow-hidden"
           >
             <Image
               src="/Images/Gold.png"
               alt="Gold Package 2"
               fill
               className="object-cover rounded-lg shadow-lg"
-              sizes="500px"
+              sizes="(max-width: 768px) 300px, 500px"
             />
           </motion.div>
 
           <motion.div
             initial={{ x: 100, opacity: 0 }}
             animate={isInView ? { x: 0, opacity: 1 } : { x: 100, opacity: 0 }}
-            transition={{ duration: 0.8, delay: 1 }}
-            className="relative w-[397px] h-[557px] overflow-hidden"
+            transition={{ duration: 0.8, delay: 1.2 }}
+            className="relative w-[300px] h-[420px] md:w-[397px] md:h-[557px] overflow-hidden"
           >
             <Image
               src="/Images/Platinum.png"
               alt="Platinum Package 2"
               fill
               className="object-cover rounded-lg shadow-lg"
-              sizes="500px"
+              sizes="(max-width: 768px) 300px, 500px"
             />
           </motion.div>
 
@@ -119,3 +118,4 @@ export default function WhyUsAbout() {
     </motion.div>
   )
 }
+
