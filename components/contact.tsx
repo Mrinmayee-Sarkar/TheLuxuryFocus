@@ -69,7 +69,7 @@ export default function ContactPage() {
                 href="tel:+91-701018092" 
                 className="flex border border-[#af8c53] rounded-[25px] w-full max-w-[350px] h-[46px] items-center justify-center md:justify-start gap-2 transition-colors mx-auto md:mx-0"
               >
-                <span className="ml-6">+91-701018092</span>
+                <span className="ml-6">+91-7010180922</span>
               </Link>
 
               <Link 

@@ -26,7 +26,7 @@ export default function MainAbout() {
       initial={{ opacity: 0 }}
       animate={isInView ? { opacity: 1 } : { opacity: 0 }}
       transition={{ duration: 1 }}
-      className="bg-[#f5f5ef] pt-8 max:sm:pt-2 max-sm:pb-0 pb-1 overflow-hidden"
+      className="bg-[#f5f5ef] pt-8 max-sm:pt-[60px] max-sm:pb-0 pb-1 overflow-hidden"
       id='about-us'
     >
       <motion.h1
