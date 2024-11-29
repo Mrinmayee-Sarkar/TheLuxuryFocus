@@ -75,13 +75,13 @@ export default function WhyUsAbout() {
       initial={{ opacity: 0 }}
       animate={isInView ? { opacity: 1 } : { opacity: 0 }}
       transition={{ duration: 1 }}
-      className="pt-12 md:pt-24 pb-1 overflow-hidden bg-white"
+      className="pt-12 max-sm:pt-5 pb-1 overflow-hidden bg-white"
     >
       <motion.h1
         initial={{ y: -50, opacity: 0 }}
         animate={isInView ? { y: 0, opacity: 1 } : { y: -50, opacity: 0 }}
         transition={{ duration: 0.8, delay: 0.2 }}
-        className={`flex justify-center text-[#c26d2d] ${tangerine.className} text-[60px] md:text-[100px]`}
+        className={`flex justify-center text-[#c26d2d] text-[100px] ${tangerine.className}`}
       >
         Why us
       </motion.h1>
@@ -90,29 +90,37 @@ export default function WhyUsAbout() {
         initial={{ y: 50, opacity: 0 }}
         animate={isInView ? { y: 0, opacity: 1 } : { y: 50, opacity: 0 }}
         transition={{ duration: 0.8, delay: 0.4 }}
-        className={`flex justify-center md:pl-72 pb-3 -mt-6 md:-mt-11 text-[#13100e] ${josefin.className} text-[18px] md:text-[25px]`}
+        className={`flex justify-center pb-3 -mt-11 text-[#13100e] ${josefin.className} text-[25px] max-sm:text-[18px] max-sm:mt-[-6px]`}
       >
         OUR ADVANTAGES
       </motion.h2>
 
-      <motion.section className="relative flex flex-col md:flex-row items-center overflow-hidden">
-        <video
-          className="absolute inset-0 object-cover object-[center_70%] brightness-75 w-full h-full"
-          src="/Images/Perfume.mp4"
-          autoPlay
-          muted
-          loop
-        />
+      <motion.section className="relative flex flex-col items-center overflow-hidden  max-sm:h-[896px]">
+        <div className="absolute inset-0">
+          <video
+            className="absolute inset-0 object-cover object-[center_70%] brightness-75 w-full h-full max-sm:hidden"
+            src="/Images/Perfume.mp4"
+            autoPlay
+            muted
+            loop
+          />
+          <Image
+            src="/Images/TheLuxuryFocusMobileVersion1.png"
+            alt="Perfume Mobile Background"
+            fill
+            className="brightness-75 hidden max-sm:block"
+          />
+        </div>
         <div className="absolute inset-0 bg-black bg-opacity-30" />
 
-        <div className="relative z-10 w-full flex flex-col md:flex-row">
+        <div className="relative z-10 w-full flex flex-row max-sm:flex-col">
           <motion.div
             initial={{ x: "-100%", opacity: 0 }}
             animate={
               isInView ? { x: 0, opacity: 1 } : { x: "-100%", opacity: 0 }
             }
             transition={{ duration: 0.8, delay: 0.8 }}
-            className="w-full md:w-2/3 p-4 md:p-16 mt-8 md:mt-16"
+            className="w-2/3 p-16 mt-16 max-sm:w-full max-sm:p-2 max-sm:mt-2"
           >
             <ul className="space-y-8">
               {advantages.map((advantage, index) => (
@@ -137,12 +145,12 @@ export default function WhyUsAbout() {
                       style={{
                         filter: "brightness(1.3) contrast(0.9)",
                       }}
-                      className={`${hanken.className} text-[#af8c53] text-[18px] md:text-[23px] font-bold pb-2 [text-shadow:_0_0_30px_#d1966a,_0_0_60px_#d1966a,_0_0_90px_rgba(209,150,106,0.8)] animate-pulse-subtle`}
+                      className={`${hanken.className} text-[#af8c53] text-[23px] font-bold pb-2 [text-shadow:_0_0_30px_#d1966a,_0_0_60px_#d1966a,_0_0_90px_rgba(209,150,106,0.8)] animate-pulse-subtle max-sm:text-[18px]`}
                     >
                       {advantage.title}
                     </h4>
                     <p
-                      className={`${josefin.className} text-[#c8d0d8] text-[14px] md:text-[17px] w-full md:w-[540px]`}
+                      className={`${josefin.className} text-[#c8d0d8] text-[17px] w-[540px] max-sm:text-[14px] max-sm:w-full`}
                     >
                       {advantage.description}
                     </p>
@@ -158,7 +166,7 @@ export default function WhyUsAbout() {
               isInView ? { x: 0, opacity: 1 } : { x: "100%", opacity: 0 }
             }
             transition={{ duration: 1, delay: 1 }}
-            className="w-full md:w-1/3 h-[40vh] md:h-[80vh] relative mt-8 md:mt-0"
+            className="w-1/3 h-[80vh] relative mt-0 max-sm:w-full max-sm:h-[40vh] max-sm:mt-8"
           >
             <motion.div
               initial={{ y: 20, opacity: 0 }}
@@ -166,7 +174,7 @@ export default function WhyUsAbout() {
               transition={{ duration: 1, delay: 1 }}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-             className=" max-sm:hidden absolute left-[40px] text-[18px] top-14 z-20 px-[85px] py-[11px] bg-[#af8c53] rounded-[20px] text-white cursor-pointer"
+              className="absolute left-[40px] text-[18px] top-14 z-20 px-[85px] py-[11px] bg-[#af8c53] rounded-[20px] text-white cursor-pointer max-sm:hidden"
             >
               Join Us
             </motion.div>
@@ -175,16 +183,25 @@ export default function WhyUsAbout() {
               initial={{ y: 50, opacity: 0 }}
               animate={isInView ? { y: 0, opacity: 1 } : { y: 50, opacity: 0 }}
               transition={{ duration: 1, delay: 1 }}
-              className="absolute inset-0 flex items-center justify-center md:justify-start"
+              className="absolute inset-0 flex items-center justify-start max-sm:justify-center"
             >
               <Image
                 src="/Images/Biz.png"
                 alt="Overlay Image"
                 width={300}
                 height={400}
-                className="z-10 pt-[60px] md:pt-[90px] cursor-pointer"
+                className="z-10 pt-[90px] cursor-pointer max-sm:pt-[40px]"
                 onClick={() => setIsModalOpen(true)}
               />
+
+              {/* <Image
+                src="/Images/TheLuxuryFocusMobileVersionPoster.png"
+                alt="Overlay Image"
+                width={300}
+                height={400}
+                className="z-10 cursor-pointer sm:hidden"
+                onClick={() => setIsModalOpen(true)}
+              /> */}
             </motion.div>
           </motion.div>
         </div>
@@ -204,4 +221,3 @@ export default function WhyUsAbout() {
     </motion.div>
   );
 }
-

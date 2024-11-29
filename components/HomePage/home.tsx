@@ -29,7 +29,6 @@ const josefin = Josefin_Sans({
 export default function HomePage() {
   return (
     <div className="relative w-full min-h-screen overflow-hidden">
-    
       <div className="absolute inset-0 w-full h-full">
         <Image
           src="/Images/Image.jpg"
@@ -39,13 +38,12 @@ export default function HomePage() {
           sizes="100vw"
           priority
         />
-      
         <div className="absolute inset-0 bg-black/30" />
       </div>
 
       <div className="relative z-10 flex flex-col items-center justify-center min-h-screen text-center px-4 py-8">
         <h1 
-          className={`${tangerine.className} text-5xl xs:text-6xl sm:text-7xl md:text-8xl lg:text-[190px] text-[#d1966a] mt-[60px] sm:mt-[100px] md:mt-[145px]
+          className={`${tangerine.className} max-sm:text-[120px] max-sm:leading-[130px] max-sm:px-28 text-[190px] text-[#d1966a] mt-5 max-sm:mt-40
             [text-shadow:_0_0_30px_#d1966a,_0_0_60px_#d1966a,_0_0_90px_rgba(209,150,106,0.8)]
             animate-pulse-subtle
           `}
@@ -56,25 +54,25 @@ export default function HomePage() {
           The Luxury Focus
         </h1> 
         <h2
-          className={`${solway.className} text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-[50px] font-bold text-[#cbc2b5] tracking-[0.2em] mt-4 sm:mt-6`}
+          className={`${solway.className} max-sm:text-[27px]  text-[50px] font-bold text-[#cbc2b5] tracking-[0.2em] mt-2`}
         >
           LUXURY REDEFINED
         </h2>
         <p
-          className={`${josefin.className} mt-4 sm:mt-7 text-base xs:text-lg sm:text-xl md:text-2xl lg:text-[25px] leading-tight font-light tracking-wider mb-6 sm:mb-8 md:mb-10 lg:mb-11 text-gray-100 max-w-xs xs:max-w-sm sm:max-w-lg md:max-w-xl lg:max-w-2xl mx-auto`}
+          className={`${josefin.className} mt-4 max-sm:text-[24px] text-[28px] leading-tight font-light tracking-wider mb-8 text-gray-100 max-w-3xl mx-auto`}
         >
           Redefining Luxury, One Iconic Moment at a Time
         </p>
 
-        <div className="items-center space-y-3 sm:space-y-4 md:space-y-5 mt-4 sm:mt-6">
-          <div className="h-[1px] sm:h-[3px] w-48 sm:w-64 md:w-80 lg:w-96 bg-[#cbc2b5]" />
+        <div className="items-center space-y-4 mt-4">
+          <div className="h-[3px] w-80 bg-[#cbc2b5]" />
           <span  
             onClick={() => document.getElementById('about-us')?.scrollIntoView({ behavior: 'smooth' })}
-            className={`${cinzel.className} text-[#f6e5d9] text-base xs:text-lg sm:text-xl md:text-2xl lg:text-[22px] leading-tight tracking-widest font-[500] block cursor-pointer`}
+            className={`${cinzel.className} text-[#f6e5d9] max-sm:text-xl text-[26px] leading-tight tracking-widest font-[500] block cursor-pointer`}
           >
             VIEW MORE
           </span>
-          <div className="h-[1px] sm:h-[3px] w-48 sm:w-64 md:w-80 lg:w-96 bg-[#cbc2b5]" />
+          <div className="h-[3px] w-80 bg-[#cbc2b5]" />
         </div>
       </div>
     </div>

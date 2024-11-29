@@ -4,6 +4,7 @@ import React, { useRef } from "react"
 import Image from "next/image"
 import { Tangerine, Josefin_Sans, Hanken_Grotesk } from "next/font/google"
 import { motion, useInView } from "framer-motion"
+import silver from '../public/Images/Silver.png'
 
 const tangerine = Tangerine({
   weight: ["400"],
@@ -47,7 +48,7 @@ export default function WhyUsAbout() {
         initial={{ y: -50, opacity: 0 }}
         animate={isInView ? { y: 0, opacity: 1 } : { y: -50, opacity: 0 }}
         transition={{ duration: 0.8, delay: 0.2 }}
-        className={`flex justify-center -mt-8 md:-mt-16 text-[#c26d2d] ${tangerine.className} text-[60px] md:text-[100px]`}
+        className={`flex justify-center -mt-8 text-[#c26d2d] max-sm:text-[100px] ${tangerine.className} text-[60px] `}
       >
         Special
       </motion.h1>
@@ -56,7 +57,7 @@ export default function WhyUsAbout() {
         initial={{ scale: 0.9, opacity: 0 }}
         animate={isInView ? { scale: 1, opacity: 1 } : { scale: 0.9, opacity: 0 }}
         transition={{ duration: 0.8, delay: 0.6 }}
-        className="relative h-[1200px] md:h-[570px]"
+        className="relative h-[570px] md:h-[570px]"
       >
         <Image
           src="/Images/Image9.jpg"
@@ -67,52 +68,53 @@ export default function WhyUsAbout() {
           priority
         />
         
-        <div className="absolute inset-0 flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-3 py-8 md:py-0 md:-mt-10">
-          <motion.div
-            initial={{ x: -100, opacity: 0 }}
-            animate={isInView ? { x: 0, opacity: 1 } : { x: -100, opacity: 0 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
-            className="relative w-[300px] h-[420px] md:w-[397px] md:h-[557px] overflow-hidden"
-          >
-            <Image
-              src="/Images/Silver.png"
-              alt="Silver Package 1"
-              fill
-              className="object-cover rounded-lg shadow-lg"
-              sizes="(max-width: 768px) 300px, 500px"
-            />
-          </motion.div>
-          
-          <motion.div
-            initial={{ x: 100, opacity: 0 }}
-            animate={isInView ? { x: 0, opacity: 1 } : { x: 100, opacity: 0 }}
-            transition={{ duration: 0.8, delay: 1 }}
-            className="relative w-[300px] h-[420px] md:w-[397px] md:h-[557px] overflow-hidden"
-          >
-            <Image
-              src="/Images/Gold.png"
-              alt="Gold Package 2"
-              fill
-              className="object-cover rounded-lg shadow-lg"
-              sizes="(max-width: 768px) 300px, 500px"
-            />
-          </motion.div>
+        <div className="absolute inset-0 flex md:flex-row justify-start md:justify-center items-center md:space-x-3 py-8 md:py-0 md:-mt-10 overflow-x-auto md:overflow-x-visible">
+          <div className="flex flex-row md:flex-row space-x-4 md:space-x-3 px-4 md:px-0">
+            <motion.div
+              initial={{ x: -100, opacity: 0 }}
+              animate={isInView ? { x: 0, opacity: 1 } : { x: -100, opacity: 0 }}
+              transition={{ duration: 0.8, delay: 0.8 }}
+              className="relative flex-shrink-0 w-[300px] h-[420px] md:w-[397px] md:h-[557px] overflow-hidden"
+            >
+              <Image
+                src={silver}
+                alt="Silver Package 1"
+                fill
+                className="object-cover rounded-lg shadow-lg"
+                sizes="(max-width: 768px) 300px, 500px"
+              />
+            </motion.div>
+            
+            <motion.div
+              initial={{ x: 100, opacity: 0 }}
+              animate={isInView ? { x: 0, opacity: 1 } : { x: 100, opacity: 0 }}
+              transition={{ duration: 0.8, delay: 1 }}
+              className="relative flex-shrink-0 w-[300px] h-[420px] md:w-[397px] md:h-[557px] overflow-hidden"
+            >
+              <Image
+                src="/Images/Gold.png"
+                alt="Gold Package 2"
+                fill
+                className="object-cover rounded-lg shadow-lg"
+                sizes="(max-width: 768px) 300px, 500px"
+              />
+            </motion.div>
 
-          <motion.div
-            initial={{ x: 100, opacity: 0 }}
-            animate={isInView ? { x: 0, opacity: 1 } : { x: 100, opacity: 0 }}
-            transition={{ duration: 0.8, delay: 1.2 }}
-            className="relative w-[300px] h-[420px] md:w-[397px] md:h-[557px] overflow-hidden"
-          >
-            <Image
-              src="/Images/Platinum.png"
-              alt="Platinum Package 2"
-              fill
-              className="object-cover rounded-lg shadow-lg"
-              sizes="(max-width: 768px) 300px, 500px"
-            />
-          </motion.div>
-
+            <motion.div
+              initial={{ x: 100, opacity: 0 }}
+              animate={isInView ? { x: 0, opacity: 1 } : { x: 100, opacity: 0 }}
+              transition={{ duration: 0.8, delay: 1.2 }}
+              className="relative flex-shrink-0 w-[300px] h-[420px] md:w-[397px] md:h-[557px] overflow-hidden"
+            >
+              <Image
+                src="/Images/Platinum.png"
+                alt="Platinum Package 2"
+                fill
+                className="object-cover rounded-lg shadow-lg"
+                sizes="(max-width: 768px) 300px, 500px"
+              />
+            </motion.div>
+          </div>
         </div>
       </motion.div>
     </motion.div>

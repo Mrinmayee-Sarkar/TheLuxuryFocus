@@ -31,9 +31,9 @@ const StayTuned = () => {
     />
     
     {/* Content overlay */}
-    <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-6 sm:px-8 py-16 sm:py-24 text-center"> 
+    <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-6 max:sm:px-0 py-16 sm:py-24 text-center"> 
       {/* Main heading */}
-      <h1 className={`${tangerine.className} text-5xl sm:text-6xl md:text-7xl lg:text-[139px] text-[#d1966a] mb-6 sm:mb-10`} 
+      <h1 className={`${tangerine.className} text-[139px] max-sm:text-[80px] text-[#d1966a] mb-6 sm:mb-10`} 
           >
         Stay Tuned!
       </h1>
@@ -51,8 +51,8 @@ const StayTuned = () => {
       </p>
       
       {/* Bottom tagline */}
-      <div className={`flex ${josefin.className} items-center gap-4 sm:gap-6 text-[#866727] text-xl sm:text-2xl md:text-[28px]`}>
-        <span className="hidden md:inline">✧</span>
+      <div className={`flex ${josefin.className}  items-center gap-4 sm:gap-6 text-[#f8be4a] text-xl sm:text-2xl md:text-[28px]`}>
+        <span className="hidden md:inline ">✧</span>
         REDEFINING ELEGANCE, CRAFTING EXCELLENCE
         <span className="hidden md:inline">✧</span>
       </div>

@@ -1,33 +1,31 @@
 'use client'
 
 import Image from "next/image"
-import { Playfair_Display, Cormorant } from "next/font/google"
+import { Tangerine, Josefin_Sans, Cinzel } from "next/font/google"
 import Link from "next/link"
-import { FaInstagram, FaWhatsapp, FaFacebook, FaYoutube, FaLinkedin, FaXTwitter } from "react-icons/fa6";
-import { Tangerine } from "next/font/google";
-import { Josefin_Sans } from "next/font/google";
-import { Cinzel } from "next/font/google";
-const tangerine  = Tangerine({
-  subsets:['latin'],
-  weight:['400']
+import { FaInstagram, FaWhatsapp, FaFacebook, FaYoutube, FaLinkedin, FaXTwitter } from "react-icons/fa6"
+
+const tangerine = Tangerine({
+  subsets: ['latin'],
+  weight: ['400']
 })
 
-const josefin= Josefin_Sans({
-  subsets:['latin'],
-  weight:['100','200','300','400','500','600','700'],
-  display:'swap'
-  })
+const josefin = Josefin_Sans({
+  subsets: ['latin'],
+  weight: ['100', '200', '300', '400', '500', '600', '700'],
+  display: 'swap'
+})
 
-  const cinzel = Cinzel({
-    subsets: ['latin'],
-    display: 'swap',
-  })
-  
+const cinzel = Cinzel({
+  subsets: ['latin'],
+  display: 'swap',
+})
+
 export default function ContactPage() {
   return (
-    <div className="grid lg:grid-cols-2 min-h-screen max-sm:pt-2 pt-24 bg-white" id='contact-us'>
-      {/* Left Section - Image */}
-      <div className="relative hidden lg:block">
+    <div className="flex flex-col lg:flex-row min-h-screen bg-white" id='contact-us'>
+      {/* Image Section - Visible on all screen sizes */}
+      <div className="relative w-full lg:w-1/2 h-64 lg:h-auto">
         <Image
           src="/Images/Image7.jpg"
           alt="Luxury Interior"
@@ -37,14 +35,14 @@ export default function ContactPage() {
         />
       </div>
 
-      {/* Right Section - Content */}
-      <div className=" md:p-12 flex flex-col justify-center ">
+      {/* Content Section */}
+      <div className="w-full lg:w-1/2 p-6 md:p-12 flex flex-col justify-center">
         <div className="max-w-2xl mx-auto">
-          <div className="mb-8 ">
-            <h1 className={`${tangerine.className} max-sm:text-[100px] md:text-6xl lg:text-8xl text-[#af8c53] `}>
+          <div className="mb-8">
+            <h1 className={`${tangerine.className} text-[100px] max-sm:text-[100px] text-[#af8c53]`}>
               {"Let's Talk"}
             </h1>
-            <h2 className={`${josefin.className} text-[25px] md:text-2xl tracking-[0.2em] text-[#13100e]`}>
+            <h2 className={`${josefin.className} text-[25px] max-sm:text-[20px] tracking-[0.2em] text-[#13100e]`}>
               CONNECT WITH US
             </h2>
           </div>
@@ -58,53 +56,49 @@ export default function ContactPage() {
                 Reach Out To Your Luxury Concierge. Indulge in personalized service from the moment you reach out. Let us handle every detail with care, discretion, and a commitment to perfection.
               </p>
             </div>
-            
-           
 
-            <div className={`${josefin.className} text-[#af8c53] hover:text-[#C5A572] space-y-4 ml-6 text-[17px]`}>
+            <div className={`${josefin.className} text-[#af8c53] hover:text-[#C5A572] space-y-4 text-[17px]`}>
               <Link 
                 href="https://theluxuryfocus.com" 
-                className={` hover:text-[#9A815A] transition-colors ml-6 block underline underline-offset-2`}
+                className="hover:text-[#9A815A] transition-colors block underline underline-offset-2"
               >
                 www.theluxuryfocus.com
               </Link>
 
               <Link 
                 href="tel:+91-701018092" 
-                className="flex border border-[#af8c53] rounded-[25px] w-[350px] h-[46px] bottom-2 items-center justify-center md:justify-start gap-2  transition-colors"
+                className="flex border border-[#af8c53] rounded-[25px] w-full max-w-[350px] h-[46px] items-center justify-center md:justify-start gap-2 transition-colors mx-auto md:mx-0"
               >
-              
                 <span className="ml-6">+91-701018092</span>
               </Link>
 
               <Link 
                 href="mailto:rmfpandya@gmail.com" 
-                className="flex items-center  transition-colors border border-[#af8c53] rounded-[25px] w-[350px] h-[46px]"
+                className="flex items-center transition-colors border border-[#af8c53] rounded-[25px] w-full max-w-[350px] h-[46px] mx-auto md:mx-0"
               >
                <span className="ml-6">rmfpandya@gmail.com</span> 
               </Link>
             </div>
 
-            <div className=" ml-6 ">
-        
-              <div className="flex items-center  border border-[#af8c53] rounded-[25px] bg-[#af8c53] w-[350px] h-[46px] justify-center md:justify-start">
-                <div className={`${cinzel.className} font-semibold ml-2 text-[15px]`}>GET SOCIAL</div>
-                <Link href="https://www.instagram.com/raamilpandya" className=" text-white p-2 rounded-full hover:bg-[#9A815A] transition-colors">
+            <div className="flex justify-center md:justify-start">
+              <div className="flex items-center border border-[#af8c53] rounded-[25px] bg-[#af8c53] w-full max-w-[350px] h-[46px] justify-center md:justify-start">
+                <div className={`${cinzel.className} font-semibold ml-2 text-[15px] text-white`}>GET SOCIAL</div>
+                <Link href="https://www.instagram.com/raamilpandya" className="text-white p-2 rounded-full hover:bg-[#9A815A] transition-colors">
                   <FaInstagram className="w-5 h-5 ml-3" />
                 </Link>
-                <Link href="https://api.whatsapp.com/send?phone=133266" className=" text-white p-2 rounded-full hover:bg-[#9A815A] transition-colors">
+                <Link href="https://api.whatsapp.com/send?phone=133266" className="text-white p-2 rounded-full hover:bg-[#9A815A] transition-colors">
                   <FaWhatsapp className="w-5 h-5" />
                 </Link>
-                <Link href="https://www.facebook.com/raamil?mibextid=ZbWKwL" className=" text-white p-2 rounded-full hover:bg-[#9A815A] transition-colors">
+                <Link href="https://www.facebook.com/raamil?mibextid=ZbWKwL" className="text-white p-2 rounded-full hover:bg-[#9A815A] transition-colors">
                   <FaFacebook className="w-5 h-5" />
                 </Link>
-                <Link href="https://www.youtube.com/@ramilramu" className=" text-white p-2 rounded-full hover:bg-[#9A815A] transition-colors">
+                <Link href="https://www.youtube.com/@ramilramu" className="text-white p-2 rounded-full hover:bg-[#9A815A] transition-colors">
                   <FaYoutube className="w-5 h-5" />
                 </Link>
-                <Link href="linkedin.com/in/ramil-pandya-5b429824" className=" text-white p-2 rounded-full hover:bg-[#9A815A] transition-colors">
+                <Link href="linkedin.com/in/ramil-pandya-5b429824" className="text-white p-2 rounded-full hover:bg-[#9A815A] transition-colors">
                   <FaLinkedin className="w-5 h-5" />
                 </Link>
-                <Link href="https://x.com/ramilramu?t=PmIjuhIyj0M1dN-RG8hgYw&s=09" className=" text-white p-2 rounded-full hover:bg-[#9A815A] transition-colors">
+                <Link href="https://x.com/ramilramu?t=PmIjuhIyj0M1dN-RG8hgYw&s=09" className="text-white p-2 rounded-full hover:bg-[#9A815A] transition-colors">
                   <FaXTwitter className="w-5 h-5" />
                 </Link>
               </div>
@@ -136,3 +130,4 @@ export default function ContactPage() {
     </div>
   )
 }
+

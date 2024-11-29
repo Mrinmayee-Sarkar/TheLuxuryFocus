@@ -25,36 +25,43 @@ const cinzel = Cinzel({
 
 const Footer = () => {
   return (
-    <div className="relative pt-1">
-      <div className="relative h-auto md:h-[450px]">
+    <div className="relative ">
+      <div className="relative h-[450px] max-sm:h-[896px]">
         <Image
           src="/Images/Image6.jpg"
           alt="Luxury Footer Background"
           fill
-          className="object-cover brightness-50"
+          className="object-cover brightness-50 hidden sm:block"
+          priority
+        />
+        <Image
+          src="/Images/TheLuxuryFocusMobileVersion2.png"
+          alt="Luxury Footer Mobile Background"
+          fill
+          className="object-cover brightness-50 sm:hidden"
           priority
         />
 
         <div className="absolute inset-0 bg-black/50" />
 
         <div className="absolute inset-0 z-10">
-          <div className="container mx-auto px-4 py-8 md:py-6">
+          <div className="container mx-auto px-4 py-8 max-sm:py-0">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-48 mt-8 md:mt-16 ">
               {/* GET IN TOUCH */}
               <div className="mb-8 md:mb-0">
                 <h2
-                  className={`${cinzel.className} text-white text-[18px] md:text-[20px] font-semibold mb-2 max-sm:text-black`}
+                  className={`${cinzel.className} text-white text-[18px] md:text-[20px] font-semibold mb-2`}
                 >
                   GET IN TOUCH
                 </h2>
                 <div className="h-[2px] bg-[#cbc2b5] w-full md:w-[340px] mb-3"></div>
                 <p
-                  className={`${josefin.className} text-[#cccccc] max-sm:text-black text-[16px] md:text-[18px] leading-relaxed`}
+                  className={`${josefin.className} text-[#cccccc] text-[16px] md:text-[18px] leading-relaxed`}
                 >
                   Your Luxury Experience Starts Here
                 </p>
                 <div
-                  className={`${josefin.className} max-sm:text-black text-[#cccccc] text-[16px] md:text-[18px] leading-relaxed mt-2`}
+                  className={`${josefin.className} text-[#cccccc] text-[16px] md:text-[18px] leading-relaxed mt-2`}
                 >
                   Thank you for choosing TheLuxuryFocus.com. We invite you to
                   explore a world where each detail reflects excellence, and
@@ -64,15 +71,15 @@ const Footer = () => {
               </div>
 
               {/* ADDRESS */}
-              <div className="mb-8 md:mb-0">
+              <div className="mb-8 max:sm:mb-3">
                 <h2
-                  className={`${cinzel.className} max-sm:text-black text-white text-[18px] md:text-[20px] font-semibold mb-2`}
+                  className={`${cinzel.className} text-white text-[18px] md:text-[20px] font-semibold mb-2`}
                 >
                   ADDRESS
                 </h2>
                 <div className="h-[2px] bg-[#cbc2b5] w-full md:w-[340px] mb-3"></div>
                 <p
-                  className={`${josefin.className} max-sm:text-black text-[#cccccc] pl-0 md:pl-5 text-[16px] md:text-[18px] leading-relaxed`}
+                  className={`${josefin.className} text-[#cccccc] pl-0 md:pl-5 text-[16px] md:text-[18px] leading-relaxed`}
                 >
                   Coimbatore, Tamil Nadu, India
                 </p>
@@ -91,45 +98,45 @@ const Footer = () => {
               {/* CONTACT US */}
               <div>
                 <h2
-                  className={`${cinzel.className} max-sm:text-black text-white text-[18px] md:text-[20px] font-semibold mb-2`}
+                  className={`${cinzel.className} text-white text-[18px] md:text-[20px] font-semibold mb-2`}
                 >
                   CONTACT US
                 </h2>
                 <div className="h-[2px] bg-[#cbc2b5] w-full md:w-[340px] mb-4"></div>
-                <div className="flex gap-4 md:gap-8 mb-8 ml-0 md:ml-3">
+                <div className="flex gap-4 md:gap-8 mb-8 max-sm:mb-4 ml-0 md:ml-3">
                   <Link
-                   href="https://www.instagram.com/raamilpandya"
-                    className="text-white max-sm:text-black hover:text-[#c26d2d] transition-colors"
+                    href="https://www.instagram.com/raamilpandya"
+                    className="text-white hover:text-[#c26d2d] transition-colors"
                   >
                     <FaInstagram size={20} className="md:w-6 md:h-6" />
                   </Link>
                   <Link
-                    href="https://api.whatsapp.com/send?phone=133266"
-                    className="text-white max-sm:text-black hover:text-[#c26d2d] transition-colors"
+                    href="https://api.whatsapp.com/message/HQTKBRXZI7YRI1?autoload=1&app_absent=0"
+                    className="text-white hover:text-[#c26d2d] transition-colors"
                   >
                     <FaWhatsapp size={20} className="md:w-6 md:h-6" />
                   </Link>
                   <Link
-                   href="https://www.facebook.com/raamil?mibextid=ZbWKwL"
-                    className="text-white max-sm:text-black hover:text-[#c26d2d] transition-colors"
+                    href="https://www.facebook.com/raamil?mibextid=ZbWKwL"
+                    className="text-white hover:text-[#c26d2d] transition-colors"
                   >
                     <FaFacebook size={20} className="md:w-6 md:h-6" />
                   </Link>
                   <Link
-                   href="https://www.youtube.com/@ramilramu"
-                    className="text-white max-sm:text-black hover:text-[#c26d2d] transition-colors"
+                    href="https://www.youtube.com/@ramilramu"
+                    className="text-white hover:text-[#c26d2d] transition-colors"
                   >
                     <FaYoutube size={20} className="md:w-6 md:h-6" />
                   </Link>
                   <Link
                     href="linkedin.com/in/ramil-pandya-5b429824"
-                    className="text-white max-sm:text-black hover:text-[#c26d2d] transition-colors"
+                    className="text-white hover:text-[#c26d2d] transition-colors"
                   >
                     <FaLinkedin size={20} className="md:w-6 md:h-6" />
                   </Link>
                   <Link
                     href="https://x.com/ramilramu?t=PmIjuhIyj0M1dN-RG8hgYw&s=09"
-                    className="text-white max-sm:text-black hover:text-[#c26d2d] transition-colors"
+                    className="text-white hover:text-[#c26d2d] transition-colors"
                   >
                     <FaXTwitter size={20} className="md:w-6 md:h-6" />
                   </Link>
@@ -137,7 +144,7 @@ const Footer = () => {
 
                 {/* Copyright */}
                 <div
-                  className={`${josefin.className} max-sm:text-black text-[#cccccc] text-[16px] md:text-[18px] leading-relaxed`}
+                  className={`${josefin.className} text-[#cccccc] text-[16px] md:text-[18px] leading-relaxed`}
                 >
                   <p>Copyright © 2024 TheLuxuryFocus.com</p>
                   <p>All Rights Reserved.</p>
@@ -157,3 +164,4 @@ const Footer = () => {
 };
 
 export default Footer;
+

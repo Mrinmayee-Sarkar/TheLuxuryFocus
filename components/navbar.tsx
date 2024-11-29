@@ -94,15 +94,17 @@ export default function Navbar() {
           color: #fbbf24;
         }
       `}</style>
-      <div className="container py-2">
+      <div className="container py-2 px-4 max-sm:px-2 ">
         <div className="flex justify-between items-center">
-          <Image
-            width={150}
-            height={150}
-            alt="logo"
-            src="/Images/logo.png"
-            className="w-auto h-auto"
-          />
+          <div className="flex-1 flex justify-start ">
+            <Image
+              width={200}
+              height={200}
+              alt="logo"
+              src="/Images/logo.png"
+              className="w-auto h-auto max-sm:w-[150px] max-sm:h-[150px] "
+            />
+          </div>
           <div className="md:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
