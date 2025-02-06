@@ -151,7 +151,7 @@ const Footer = () => {
                   <Link href="https://theluxuryfocus.com/privacy-policy/">
                     Privacy & Policy
                   </Link>
-                  <p className="mt-4">Designed by Shreyalicious</p>
+                  <p className="mt-4">Designed by Shreya Chatterjee</p>
                   <p>Developed by Mrinmayee Sarkar</p>
                 </div>
               </div>

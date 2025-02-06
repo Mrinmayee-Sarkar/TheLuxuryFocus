@@ -1,60 +1,42 @@
-'use client'
+"use client";
 
 import React, { useRef, useState } from "react";
 import Image from "next/image";
 import { Tangerine, Josefin_Sans, Hanken_Grotesk } from "next/font/google";
 import { motion, useInView } from "framer-motion";
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const tangerine = Tangerine({ weight: ["400"], subsets: ["latin"] });
-const josefin = Josefin_Sans({ subsets: ["latin"], weight: ["400"], display: "swap" });
+const josefin = Josefin_Sans({
+  subsets: ["latin"],
+  weight: ["400"],
+  display: "swap",
+});
 const hanken = Hanken_Grotesk({ weight: ["300"], subsets: ["latin"] });
 
 const testimonials = [
   {
-    text: "The ambiance was great - and the food even better! Simple recipes done well with top-notch ingredients.",
-    author: "Dahl, Mother",
-    image: "/Images/images.jpg",
+    text: "Working with The Luxury Focus has been a game changer for our business. Their insightful consulting and exquisite taste in luxury have elevated our brand to new heights.",
+    author: "Shreya Chatterjee",
+    image: "/Images/Testimonial.jpg",
   },
   {
-    text: "Eating here made me miss Paris so much. What a treat! I will bring my clients here.",
-    author: "Cathy, Entrepreneur",
-    image: "/Images/images.jpg",
+    text: "The Luxury Focus has redefined what it means to provide luxury consulting. Their expertise, combined with their genuine passion for luxury, has made a remarkable difference in our business.",
+    author: "Divyansh Palia",
+    image: "/Images/Testimonial2.jpg",
   },
   {
-    text: "Exceptional service and attention to detail. A truly luxurious experience!",
-    author: "Michael, CEO",
-    image: "/Images/images.jpg",
-  },
-  {
-    text: "The perfect blend of elegance and comfort. I'll definitely be returning!",
-    author: "Sarah, Designer",
-    image: "/Images/images.jpg",
-  },
-  {
-    text: "An unforgettable experience that exceeded all my expectations.",
-    author: "John, Travel Blogger",
-    image: "/Images/images.jpg",
-  },
-  {
-    text: "The epitome of luxury and sophistication. Highly recommended!",
-    author: "Emma, Fashion Editor",
-    image: "/Images/images.jpg",
+    text: "The Luxury Focus provided unparalleled consulting services that transformed our luxury offerings. Their attention to detail and deep industry knowledge were evident in every aspect of their work.",
+    author: "Mrinmayee Sarkar",
+    image: "/Images/Testimonial3.jpg",
   },
 ];
 
 const partners = [
-  "/Images/brand2.png",
-  "/Images/brand1.webp",
-  "/Images/brand2.png",
-  "/Images/brand1.webp",
-  "/Images/brand2.png",
-  "/Images/brand1.webp",
-  "/Images/brand2.png",
-  "/Images/brand1.webp",
-  "/Images/brand2.png",
-  "/Images/brand1.webp",
-  "/Images/brand2.png",
+  "/Images/Partner.jpg",
+  "/Images/Partner2.png",
+  "/Images/Partner3.jpg",
+  "/Images/Partner4.jpg",
 ];
 
 export default function TestimonialsPage() {
@@ -64,9 +46,7 @@ export default function TestimonialsPage() {
   const [currentPartnerIndex, setCurrentPartnerIndex] = useState(0);
 
   const handleTestimonialNext = () => {
-    setCurrentTestimonialIndex((prev) =>
-      (prev + 1) % testimonials.length
-    );
+    setCurrentTestimonialIndex((prev) => (prev + 1) % testimonials.length);
   };
 
   const handleTestimonialPrev = () => {
@@ -76,9 +56,7 @@ export default function TestimonialsPage() {
   };
 
   const handlePartnerNext = () => {
-    setCurrentPartnerIndex((prev) =>
-      (prev + 1) % partners.length
-    );
+    setCurrentPartnerIndex((prev) => (prev + 1) % partners.length);
   };
 
   const handlePartnerPrev = () => {
@@ -95,7 +73,7 @@ export default function TestimonialsPage() {
         animate={isInView ? { opacity: 1 } : { opacity: 0 }}
         transition={{ duration: 1 }}
         className="pt-16 md:pt-24 pb-1 overflow-hidden"
-        id='testimonials'
+        id="testimonials"
       >
         <div className="flex flex-col md:flex-row justify-center items-center md:items-end px-4 md:px-0">
           <motion.h1
@@ -119,7 +97,9 @@ export default function TestimonialsPage() {
 
         <motion.div
           initial={{ scale: 0.9, opacity: 0 }}
-          animate={isInView ? { scale: 1, opacity: 1 } : { scale: 0.9, opacity: 0 }}
+          animate={
+            isInView ? { scale: 1, opacity: 1 } : { scale: 0.9, opacity: 0 }
+          }
           transition={{ duration: 0.8, delay: 0.6 }}
           className="relative h-[700px] md:h-[550px] mt-8 md:mt-0"
         >
@@ -139,23 +119,31 @@ export default function TestimonialsPage() {
                 onClick={handleTestimonialPrev}
               />
               {[0, 1, 2].map((offset) => {
-                const index = (currentTestimonialIndex + offset) % testimonials.length;
+                const index =
+                  (currentTestimonialIndex + offset) % testimonials.length;
                 const testimonial = testimonials[index];
                 return (
-                  <div key={index} className="w-full h-auto md:h-40 p-4">
+                  <div
+                    key={`testimonial-${index}`}
+                    className="w-full h-auto md:h-40 p-4"
+                  >
                     <div className="rounded-lg flex flex-col md:flex-row items-center text-[12px] md:text-[14px]">
                       <Image
                         src={testimonial.image}
                         alt={testimonial.author}
-                        width={60}
-                        height={60}
+                        width={100}
+                        height={100}
                         className="rounded-full mb-2 md:mb-0 md:mr-4"
                       />
-                      <p className={`text-center md:text-left ${hanken.className} text-gray-800`}>
+                      <p
+                        className={`text-center md:text-left ${hanken.className} text-gray-800`}
+                      >
                         {testimonial.text}
                       </p>
                     </div>
-                    <p className="italic text-sm text-gray-500 text-center md:text-left mt-2">- {testimonial.author}</p>
+                    <p className="italic text-sm text-gray-500 text-center md:text-left mt-2">
+                      - {testimonial.author}
+                    </p>
                   </div>
                 );
               })}
@@ -167,34 +155,38 @@ export default function TestimonialsPage() {
 
             <div className="bg-[#f5f5ef] mt-8 md:mt-5 p-4 md:p-0">
               <div className="flex flex-col md:flex-row justify-center items-center">
-                <h2 className={`text-center text-[50px] md:text-[80px] ${tangerine.className} text-[#c26d2d]`}>
+                <h2
+                  className={`text-center text-[50px] md:text-[80px] ${tangerine.className} text-[#c26d2d]`}
+                >
                   Our Partners
                 </h2>
-                <p className={`text-center ${josefin.className} text-[16px] md:text-[20px] mt-2 md:mt-[60px] md:ml-3`}>
+                <p
+                  className={`text-center ${josefin.className} text-[16px] md:text-[20px] mt-2 md:mt-[60px] md:ml-3`}
+                >
                   We are proud to have them with us
                 </p>
               </div>
             </div>
 
-            <div className="flex items-center justify-center space-x-4 md:space-x-8 overflow-hidden bg-[#cbc2b5] h-32 md:h-40 mt-4 md:mt-0">
+            <div className="flex items-center pt-4 justify-center space-x-4 md:space-x-8 overflow-hidden bg-[#cbc2b5] h-32 md:h-40 mt-4 md:mt-0">
               <ChevronLeft
                 className="w-8 h-8 md:w-10 md:h-10 text-gray-800 transform -translate-y-1/2 cursor-pointer"
                 onClick={handlePartnerPrev}
               />
-              {[0, 1, 2, 3, 4, 5].map((offset) => {
+              {[0, 1, 2].map((offset) => {
                 const index = (currentPartnerIndex + offset) % partners.length;
                 const logo = partners[index];
                 return (
                   <motion.div
-                    key={index}
+                    key={`partner-${index}`}
                     whileHover={{ scale: 1.1 }}
-                    className="w-[60px] h-[60px] md:w-[100px] md:h-[100px] flex justify-center items-center bg-white shadow-md"
+                    className="w-[100px] h-[100px] md:w-[100px] md:h-[100px] flex justify-center items-center bg-[#cbc2b5]"
                   >
                     <Image
                       src={logo}
                       alt={`Partner ${index + 1}`}
-                      width={50}
-                      height={50}
+                      width={500}
+                      height={500}
                       className="w-auto h-auto max-w-full max-h-full"
                     />
                   </motion.div>
@@ -211,4 +203,3 @@ export default function TestimonialsPage() {
     </>
   );
 }
-
